@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica Basica - Sistemas Operacionais</title>
+    <style>
+        html, body {
+            background-color: black !important;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #111;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white !important;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .conteudo-aula {
+            margin-top: 100px;
+            width: 90%;
+            max-width: 600px;
+            padding-bottom: 50px;
+        }
+
+        h1 { color: red !important; text-align: center; font-size: 30px; }
+        .subtitulo { text-align: center; color: #888; margin-bottom: 30px; }
+        h2 { color: red; font-size: 22px; margin-top: 30px; border-bottom: 1px solid #222; padding-bottom: 5px; }
+        p { color: #ccc; font-size: 16px; line-height: 1.6; }
+        
+        .imagem-container { text-align: center; margin: 25px 0; }
+        .imagem-container img { width: 100%; max-width: 450px; border: 2px solid red; border-radius: 8px; }
+        .botao-voltar { display: block; text-align: center; background-color: red; color: white !important; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="conteudo-aula">
+        <h1>Módulo 3: Sistemas Operacionais</h1>
+        <div class="subtitulo">O software principal do computador</div>
+
+        <h2>O que é um Sistema Operacional?</h2>
+        <p>O <strong>Sistema Operacional (SO)</strong> é o programa que faz a gestão de todo o computador. Ele serve como uma ponte para que você consiga interagir com as peças físicas (hardware) sem precisar de entender de linhas de código complexas.</p>
+
+        <div class="imagem-container">
+            <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=500" alt="Sistemas">
+            <p style="font-size: 12px; color: #666; margin-top: 5px;">Interface gráfica de sistemas gerindo dados</p>
+        </div>
+
+        <h2>Principais Exemplos:</h2>
+        <p><strong>1. Windows:</strong> O sistema mais utilizado em computadores no mundo, focado na facilidade de uso do dia a dia.</p>
+        <p><strong>2. Android:</strong> O sistema focado em dispositivos móveis (smartphones e tablets), como o que estás a usar agora.</p>
+        <p><strong>3. Linux:</strong> Um sistema de código aberto, gratuito e muito seguro, adorado por programadores e servidores.</p>
+
+        <a href="aulas.html" class="botao-voltar">Voltar para Módulos</a>
+    </div>
+
+</body>
+</html>

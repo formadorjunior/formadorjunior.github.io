@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica Basica - Super Quiz</title>
+    <style>
+        html, body {
+            background-color: black !important;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- MENU SUPERIOR --- */
+        nav {
+            width: 100%;
+            background-color: #111;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white !important;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        /* --- CONTEÚDO --- */
+        .conteudo-quiz {
+            margin-top: 100px;
+            width: 90%;
+            max-width: 600px;
+            padding-bottom: 50px;
+        }
+
+        h1 { color: red !important; text-align: center; font-size: 32px; margin-bottom: 10px; }
+        .descricao { text-align: center; color: #888; margin-bottom: 30px; }
+        .secao-titulo { color: red; font-size: 18px; margin: 20px 0 10px 0; border-left: 3px solid red; padding-left: 10px; }
+
+        .pergunta-card {
+            background-color: #111;
+            border: 1px solid #222;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .pergunta-card h3 { margin-top: 0; color: white; font-size: 17px; line-height: 1.4; }
+
+        /* Estilo Botões Múltipla Escolha e V/F */
+        .opcao-btn, .vf-btn {
+            display: block;
+            width: 100%;
+            background-color: #222;
+            color: white;
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        /* Ajuste para botões lado a lado no V/F */
+        .container-vf { display: flex; gap: 15px; margin-top: 15px; }
+        .vf-btn { text-align: center; margin-top: 0; font-weight: bold; }
+
+        /* Estilo para Campo de Digitação */
+        .input-resposta {
+            width: 100%;
+            background-color: #222;
+            border: 1px solid #333;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        
+        .validar-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Cores de Feedback */
+        .correta { background-color: #1b4314 !important; border-color: #2e7d32 !important; color: #a5d6a7 !important; }
+        .incorporreta { background-color: #4a1515 !important; border-color: #c62828 !important; color: #ef9a9a !important; }
+
+        .botao-voltar { display: block; text-align: center; background-color: red; color: white !important; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="projetos.html" style="background-color: red;">Projetos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="conteudo-quiz">
+        <h1>Desafio de Informática</h1>
+        <div class="descricao">Responda às perguntas abaixo usando formatos diferentes!</div>
+
+        <div class="secao-titulo">Modo 1: Múltipla Escolha</div>
+        
+        <div class="pergunta-card">
+            <h3>1) Qual o componente físico considerado o "cérebro" do computador?</h3>
+            <button class="opcao-btn" onclick="verificarBotao(this, false)">A) Memória RAM</button>
+            <button class="opcao-btn" onclick="verificarBotao(this, true)">B) Processador (CPU)</button>
+            <button class="opcao-btn" onclick="verificarBotao(this, false)">C) Disco Rígido (HD)</button>
+        </div>
+
+        <div class="secao-titulo">Modo 2: Verdadeiro ou Falso</div>
+
+        <div class="pergunta-card">
+            <h3>2) O "Software" representa a parte física do computador, ou seja, as placas e circuitos que podemos tocar.</h3>
+            <div class="container-vf">
+                <button class="vf-btn" onclick="verificarBotao(this, false)">VERDADEIRO</button>
+                <button class="vf-btn" onclick="verificarBotao(this, true)">FALSO</button>
+            </div>
+            </div>
+
+        <div class="secao-titulo">Modo 3: Digite a Resposta</div>
+
+        <div class="pergunta-card">
+            <h3>3) Digite o nome do Sistema Operacional da Google muito usado em smartphones (tudo em minúsculas):</h3>
+            <input type="text" id="campo-resposta-3" class="input-resposta" placeholder="Digite aqui...">
+            <button class="validar-btn" onclick="verificarTexto('campo-resposta-3', 'android')">Verificar Resposta</button>
+        </div>
+        
+        <div class="pergunta-card">
+            <h3>4) Digite a sigla inglesa para a Unidade Central de Processamento:</h3>
+            <input type="text" id="campo-resposta-4" class="input-resposta" placeholder="Digite aqui...">
+            <button class="validar-btn" onclick="verificarTexto('campo-resposta-4', 'cpu')">Verificar Resposta</button>
+        </div>
+
+        <a href="index.html" class="botao-voltar">Voltar para o Início</a>
+    </div>
+
+    <script>
+        // Função para validar botões (Múltipla escolha e V/F)
+        function verificarBotao(botao, eCorreta) {
+            const pai = botao.parentElement;
+            const botoes = pai.querySelectorAll('.opcao-btn, .vf-btn');
+            
+            botoes.forEach(b => b.classList.remove('correta', 'incorporreta'));
+
+            if (eCorreta) {
+                botao.classList.add('correta');
+            } else {
+                botao.classList.add('incorporreta');
+            }
+        }
+
+        // Função para validar caixas de texto (Ignora maiúsculas/minúsculas e espaços extras)
+        function verificarTexto(idCampo, respostaCorreta) {
+            const campo = document.getElementById(idCampo);
+            const textoDigitado = campo.value.trim().toLowerCase();
+
+            campo.classList.remove('correta', 'incorporreta');
+
+            if (textoDigitado === respostaCorreta) {
+                campo.classList.add('correta');
+            } else {
+                campo.classList.add('incorporreta');
+            }
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Informática Básica</title>
+    <style>
+        html, body {
+            background-color: black !important;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- MENU SUPERIOR MODERNO --- */
+        nav {
+            width: 100%;
+            background-color: #111;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: #bbb !important;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 16px;
+            display: block;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        /* Efeito ao passar o dedo/mouse (Hover) */
+        nav ul li a:hover {
+            background-color: #222;
+            color: white !important;
+        }
+
+        /* Destaque da Página Atual */
+        .pagina-ativa {
+            background-color: red !important;
+            color: white !important;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .boas-vindas {
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: red !important;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .botao-entrar {
+            display: inline-block;
+            background-color: red;
+            color: white !important;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .botao-entrar:active {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="pagina-ativa">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="boas-vindas">
+        <h1>Informática Básica</h1>
+        <p>Bem-vindo à plataforma oficial do curso. Aqui você aprenderá a dominar o computador do zero!</p>
+        <a href="aulas.html" class="botao-entrar">Iniciar Curso</a>
+    </div>
+
+</body>
+</html>

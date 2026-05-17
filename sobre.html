@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica Basica - Sobre</title>
+    <style>
+        html, body {
+            background-color: black !important;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- MENU SUPERIOR MODERNO --- */
+        nav {
+            width: 100%;
+            background-color: #111;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: #bbb !important;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 16px;
+            display: block;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #222;
+            color: white !important;
+        }
+
+        .pagina-ativa {
+            background-color: red !important;
+            color: white !important;
+        }
+
+        /* --- CONTEÚDO --- */
+        .conteudo {
+            margin-top: 100px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            color: red !important;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* --- CARTÃO DO FORMADOR --- */
+        .perfil-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-top: 4px solid red;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .perfil-card h2 {
+            color: white;
+            margin: 0 0 5px 0;
+            font-size: 22px;
+        }
+
+        .perfil-card .cargo {
+            color: red;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .perfil-card p {
+            font-size: 15px;
+            color: #aaa;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="sobre.html" class="pagina-ativa">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="conteudo">
+        <h1>Sobre o Curso</h1>
+        <p>Este site foi desenvolvido para servir como uma plataforma de apoio no ensino de Informática Básica, facilitando o acesso dos alunos aos conteúdos digitais de forma simples, direta e interativa.</p>
+
+        <div class="perfil-card">
+            <h2>António Eduardo Muianga</h2>
+            <div class="cargo">Formador Júnior</div>
+            <p>Responsável pelo desenvolvimento da plataforma e pela orientação dos alunos nas aulas práticas de hardware e sistemas.</p>
+        </div>
+    </div>
+
+</body>
+</html>
