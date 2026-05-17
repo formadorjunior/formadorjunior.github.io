@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica Basica - Aulas</title>
+    <style>
+        html, body {
+            background-color: black !important;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- MENU SUPERIOR --- */
+        nav {
+            width: 100%;
+            background-color: #111;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white !important;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        nav ul li a:active {
+            background-color: red;
+        }
+
+        /* --- CONTEÚDO --- */
+        .conteudo-aulas {
+            margin-top: 100px;
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            color: red !important;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .modulo-card {
+            background-color: #111;
+            border-left: 5px solid red;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .modulo-card h2 {
+            color: red;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .modulo-card p {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            background-color: #222;
+            color: white !important;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .botao-voltar:active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="conteudo-aulas">
+        <h1>Módulos do Curso</h1>
+
+        <a href="hardware.html" style="text-decoration: none;">
+            <div class="modulo-card">
+                <h2>Módulo 1: O que é Hardware e Software? ➔</h2>
+                <p>Descubra a diferença entre a parte física do computador (componentes, circuitos) e a parte lógica (programas, aplicativos e sistemas).</p>
+            </div>
+        </a>
+
+        <a href="cpu.html" style="text-decoration: none;">
+            <div class="modulo-card">
+                <h2>Módulo 2: O Processador (CPU) ➔</h2>
+                <p>Entenda como funciona o cérebro do computador. Como ele processa os dados, executa os comandos e controla todas as outras partes do sistema.</p>
+            </div>
+        </a>
+
+        <a href="so.html" style="text-decoration: none;">
+            <div class="modulo-card">
+                <h2>Módulo 3: Sistemas Operacionais ➔</h2>
+                <p>Uma introdução ao Windows, Linux e Android. Como eles gerenciam os arquivos, pastas e permitem nossa interação com a máquina.</p>
+            </div>
+        </a>
+
+        <a href="index.html" class="botao-voltar">Voltar para a Página Inicial</a>
+    </div>
+
+</body>
+</html>

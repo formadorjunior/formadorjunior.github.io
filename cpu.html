@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica Basica - O Processador</title>
+    <style>
+        html, body {
+            background-color: black !important;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- MENU SUPERIOR --- */
+        nav {
+            width: 100%;
+            background-color: #111;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white !important;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        nav ul li a:active {
+            background-color: red;
+        }
+
+        /* --- CONTEÚDO DA AULA --- */
+        .conteudo-aula {
+            margin-top: 100px;
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            color: red !important;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: red;
+            font-size: 22px;
+            margin-top: 30px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Estilo para a Imagem (Opção B) */
+        .imagem-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .imagem-container img {
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid red;
+            border-radius: 8px;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            background-color: red;
+            color: white !important;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+
+        .botao-voltar:active {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="aulas.html">Aulas</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div class="conteudo-aula">
+        <h1>Módulo 2: O Processador (CPU)</h1>
+        <div class="subtitulo">Entendendo o cérebro do computador</div>
+
+        <h2>O que é a CPU?</h2>
+        <p>A <strong>CPU</strong> (Central Processing Unit, ou Unidade Central de Processamento) é o componente mais importante do computador. Ela é responsável por executar todas as instruções, fazer os cálculos matemáticos e controlar o fluxo de dados entre as outras peças, como a memória RAM e o armazenamento.</p>
+
+        <div class="imagem-container">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500" alt="Processador de Computador">
+
+            <p style="font-size: 12px; color: #666; margin-top: 5px;">Exemplo de um processador moderno (Hardware)</p>
+        </div>
+
+        <h2>Como ela funciona?</h2>
+        <p>A CPU funciona em um ciclo repetitivo de três passos básicos:</p>
+        <p><strong>1. Busca:</strong> Ela pega a instrução que está guardada na memória RAM.<br>
+        <strong>2. Decodificação:</strong> Descobre o que essa instrução manda fazer (ex: somar dois números).<br>
+        <strong>3. Execução:</strong> Realiza a tarefa e guarda o resultado.</p>
+
+        <a href="aulas.html" class="botao-voltar">Voltar para Módulos</a>
+    </div>
+
+</body>
+</html>
