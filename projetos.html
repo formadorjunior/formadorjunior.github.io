@@ -1,207 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informatica Basica - Super Quiz</title>
-    <style>
-        html, body {
-            background-color: black !important;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* --- MENU SUPERIOR --- */
-        nav {
-            width: 100%;
-            background-color: #111;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: white !important;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 10px 15px;
-            display: block;
-            border-radius: 5px;
-        }
-
-        /* --- CONTEÚDO --- */
-        .conteudo-quiz {
-            margin-top: 100px;
-            width: 90%;
-            max-width: 600px;
-            padding-bottom: 50px;
-        }
-
-        h1 { color: red !important; text-align: center; font-size: 32px; margin-bottom: 10px; }
-        .descricao { text-align: center; color: #888; margin-bottom: 30px; }
-        .secao-titulo { color: red; font-size: 18px; margin: 20px 0 10px 0; border-left: 3px solid red; padding-left: 10px; }
-
-        .pergunta-card {
-            background-color: #111;
-            border: 1px solid #222;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-
-        .pergunta-card h3 { margin-top: 0; color: white; font-size: 17px; line-height: 1.4; }
-
-        /* Estilo Botões Múltipla Escolha e V/F */
-        .opcao-btn, .vf-btn {
-            display: block;
-            width: 100%;
-            background-color: #222;
-            color: white;
-            border: 1px solid #333;
-            padding: 12px;
-            text-align: left;
-            border-radius: 6px;
-            margin-top: 10px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        /* Ajuste para botões lado a lado no V/F */
-        .container-vf { display: flex; gap: 15px; margin-top: 15px; }
-        .vf-btn { text-align: center; margin-top: 0; font-weight: bold; }
-
-        /* Estilo para Campo de Digitação */
-        .input-resposta {
-            width: 100%;
-            background-color: #222;
-            border: 1px solid #333;
-            color: white;
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 6px;
-            box-sizing: border-box;
-            margin-top: 10px;
-        }
-        
-        .validar-btn {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 12px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        /* Cores de Feedback */
-        .correta { background-color: #1b4314 !important; border-color: #2e7d32 !important; color: #a5d6a7 !important; }
-        .incorporreta { background-color: #4a1515 !important; border-color: #c62828 !important; color: #ef9a9a !important; }
-
-        .botao-voltar { display: block; text-align: center; background-color: red; color: white !important; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 30px; }
-    </style>
+    <title>Projetos - Curso de Informática Básica</title>
 </head>
-<body>
+<body style="background-color: #000; margin: 0; padding: 0; font-family: sans-serif; color: #fff;">
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="aulas.html">Aulas</a></li>
-            <li><a href="projetos.html" style="background-color: red;">Projetos</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-    </nav>
-
-    <div class="conteudo-quiz">
-        <h1>Desafio de Informática</h1>
-        <div class="descricao">Responda às perguntas abaixo usando formatos diferentes!</div>
-
-        <div class="secao-titulo">Modo 1: Múltipla Escolha</div>
-        
-        <div class="pergunta-card">
-            <h3>1) Qual o componente físico considerado o "cérebro" do computador?</h3>
-            <button class="opcao-btn" onclick="verificarBotao(this, false)">A) Memória RAM</button>
-            <button class="opcao-btn" onclick="verificarBotao(this, true)">B) Processador (CPU)</button>
-            <button class="opcao-btn" onclick="verificarBotao(this, false)">C) Disco Rígido (HD)</button>
-        </div>
-
-        <div class="secao-titulo">Modo 2: Verdadeiro ou Falso</div>
-
-        <div class="pergunta-card">
-            <h3>2) O "Software" representa a parte física do computador, ou seja, as placas e circuitos que podemos tocar.</h3>
-            <div class="container-vf">
-                <button class="vf-btn" onclick="verificarBotao(this, false)">VERDADEIRO</button>
-                <button class="vf-btn" onclick="verificarBotao(this, true)">FALSO</button>
-            </div>
-            </div>
-
-        <div class="secao-titulo">Modo 3: Digite a Resposta</div>
-
-        <div class="pergunta-card">
-            <h3>3) Digite o nome do Sistema Operacional da Google muito usado em smartphones (tudo em minúsculas):</h3>
-            <input type="text" id="campo-resposta-3" class="input-resposta" placeholder="Digite aqui...">
-            <button class="validar-btn" onclick="verificarTexto('campo-resposta-3', 'android')">Verificar Resposta</button>
-        </div>
-        
-        <div class="pergunta-card">
-            <h3>4) Digite a sigla inglesa para a Unidade Central de Processamento:</h3>
-            <input type="text" id="campo-resposta-4" class="input-resposta" placeholder="Digite aqui...">
-            <button class="validar-btn" onclick="verificarTexto('campo-resposta-4', 'cpu')">Verificar Resposta</button>
-        </div>
-
-        <a href="index.html" class="botao-voltar">Voltar para o Início</a>
+    <div style="background-color: #111; padding: 10px; text-align: center; border-bottom: 1px solid #222;">
+        <a href="index.html" style="color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px;">Início</a>
+        <a href="aulas.html" style="color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px;">Aulas</a>
+        <a href="projetos.html" style="color: #ff0000; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px; border-bottom: 2px solid #ff0000; padding-bottom: 5px;">Projetos</a>
+        <a href="#sobre" style="color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 14px;">Sobre</a>
     </div>
 
-    <script>
-        // Função para validar botões (Múltipla escolha e V/F)
-        function verificarBotao(botao, eCorreta) {
-            const pai = botao.parentElement;
-            const botoes = pai.querySelectorAll('.opcao-btn, .vf-btn');
-            
-            botoes.forEach(b => b.classList.remove('correta', 'incorporreta'));
+    <div style="max-width: 800px; margin: 30px auto; padding: 20px; box-sizing: border-box;">
+        
+        <h2 style="color: #00ffcc; border-bottom: 2px solid #00ffcc; padding-bottom: 8px; margin-top: 0; font-size: 22px;">💻 Módulos de Informática Geral (1º Nível)</h2>
+        
+        <div style="background-color: #1a1a1a; padding: 20px; margin-top: 20px; border-radius: 8px; border-left: 4px solid #00ffcc;">
+            <h3 style="margin-top: 0; color: #fff; font-size: 18px;">Módulo 1: Componentes de um Computador</h3>
+            <p style="color: #bbb; font-size: 14px; line-height: 1.6;">
+                A informática divide-se em duas partes principais: Hardware (a parte física, como memórias e CPU) e Software (a parte lógica, como o Windows e os programas).
+            </p>
+            <div style="background-color: #111; padding: 15px; margin-top: 15px; border-radius: 6px; border: 1px solid #333;">
+                <strong style="color: #ffcc00; font-size: 14px;">📝 Exercício Prático 1:</strong>
+                <p style="margin: 8px 0; font-size: 14px; color: #eee;">Qual das seguintes opções representa um exemplo de <strong>Software</strong>?</p>
+                <ul style="list-style-type: none; padding-left: 0; margin: 0; font-size: 14px; color: #ccc;">
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q1" id="inf_q1a"> <label for="inf_q1a">a) O Rato (Mouse)</label></li>u7898
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q1" id="inf_q1b"> <label for="inf_q1b">b) O Sistema Operativo Windows</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q1" id="inf_q1c"> <label for="inf_q1c">c) O Teclado</label></li>
+                </ul>
+            </div>
+        </div>
 
-            if (eCorreta) {
-                botao.classList.add('correta');
-            } else {
-                botao.classList.add('incorporreta');
-            }
-        }
+        <div style="background-color: #1a1a1a; padding: 20px; margin-top: 25px; border-radius: 8px; border-left: 4px solid #ffaa00;">
+            <h3 style="margin-top: 0; color: #fff; font-size: 18px;">Módulo 2: Higiene e Segurança no Trabalho Informático</h3>
+            <p style="color: #bbb; font-size: 14px; line-height: 1.6;">
+                Trabalhar com informática exige cuidados com a postura (ergonomia). Devemos manter as costas direitas na cadeira e fazer pequenas pausas para descansar a vista.
+            </p>
+            <div style="background-color: #111; padding: 15px; margin-top: 15px; border-radius: 6px; border: 1px solid #333;">
+                <strong style="color: #ffcc00; font-size: 14px;">📝 Exercício Prático 2:</strong>
+                <p style="margin: 8px 0; font-size: 14px; color: #eee;">Para evitar cansaço visual e dores no corpo ao usar o computador, o que deve ser feito?</p>
+                <ul style="list-style-type: none; padding-left: 0; margin: 0; font-size: 14px; color: #ccc;">
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q2" id="inf_q2a"> <label for="inf_q2a">a) Ficar muito próximo do ecrã e trabalhar no escuro.</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q2" id="inf_q2b"> <label for="inf_q2b">b) Manter uma postura correta e fazer pequenas pausas para descansar.</label></li>
+                </ul>
+            </div>
+        </div>
 
-        // Função para validar caixas de texto (Ignora maiúsculas/minúsculas e espaços extras)
-        function verificarTexto(idCampo, respostaCorreta) {
-            const campo = document.getElementById(idCampo);
-            const textoDigitado = campo.value.trim().toLowerCase();
+        <div style="background-color: #1a1a1a; padding: 20px; margin-top: 25px; border-radius: 8px; border-left: 4px solid #ff3366;">
+            <h3 style="margin-top: 0; color: #fff; font-size: 18px;">Módulo 3: Periféricos (Dispositivos de Entrada e Saída)</h3>
+            <p style="color: #bbb; font-size: 14px; line-height: 1.6;">
+                Os **Dispositivos de Entrada** enviam dados para dentro do computador (Teclado, Rato, Scanner). Os **Dispositivos de Saída** recebem os dados processados e mostram-nos ao utilizador (Monitor, Impressora, Colunas de Som).
+            </p>
+            <div style="background-color: #111; padding: 15px; margin-top: 15px; border-radius: 6px; border: 1px solid #333;">
+                <strong style="color: #ffcc00; font-size: 14px;">📝 Exercício Prático 3:</strong>
+                <p style="margin: 8px 0; font-size: 14px; color: #eee;">Qual dos seguintes componentes é considerado um dispositivo exclusivamente de <strong>Saída</strong>?</p>
+                <ul style="list-style-type: none; padding-left: 0; margin: 0; font-size: 14px; color: #ccc;">
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q3" id="inf_q3a"> <label for="inf_q3a">a) Teclado</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q3" id="inf_q3b"> <label for="inf_q3b">b) Monitor</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q3" id="inf_q3c"> <label for="inf_q3c">c) Rato (Mouse)</label></li>
+                </ul>
+            </div>
+        </div>
 
-            campo.classList.remove('correta', 'incorporreta');
+        <div style="background-color: #1a1a1a; padding: 20px; margin-top: 25px; border-radius: 8px; border-left: 4px solid #a832ff;">
+            <h3 style="margin-top: 0; color: #fff; font-size: 18px;">Módulo 4: Estrutura Interna da CPU</h3>
+            <p style="color: #bbb; font-size: 14px; line-height: 1.6;">
+                O processador possui duas partes fundamentais para realizar as tarefas:
+                <br>• <strong>UC (Unidade de Controlo):</strong> Controla o fluxo de dados e organiza as tarefas.
+                <br>• <strong>ULA (Unidade Lógica e Aritmética):</strong> Faz os cálculos matemáticos (somas, subtrações) e decisões lógicas.
+            </p>
+            <div style="background-color: #111; padding: 15px; margin-top: 15px; border-radius: 6px; border: 1px solid #333;">
+                <strong style="color: #ffcc00; font-size: 14px;">📝 Exercício Prático 4:</strong>
+                <p style="margin: 8px 0; font-size: 14px; color: #eee;">Quem é responsável por realizar as operações matemáticas e lógicas dentro do processador?</p>
+                <ul style="list-style-type: none; padding-left: 0; margin: 0; font-size: 14px; color: #ccc;">
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q4" id="inf_q4a"> <label for="inf_q4a">a) Memória RAM</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q4" id="inf_q4b"> <label for="inf_q4b">b) ULA (Unidade Lógica e Aritmética)</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q4" id="inf_q4c"> <label for="inf_q4c">c) Disco Rígido</label></li>
+                </ul>
+            </div>
+        </div>
 
-            if (textoDigitado === respostaCorreta) {
-                campo.classList.add('correta');
-            } else {
-                campo.classList.add('incorporreta');
-            }
-        }
-    </script>
+        <div style="background-color: #1a1a1a; padding: 20px; margin-top: 25px; border-radius: 8px; border-left: 4px solid #32ff7e;">
+            <h3 style="margin-top: 0; color: #fff; font-size: 18px;">Módulo 5: Organização de Arquivos no Sistema Operativo</h3>
+            <p style="color: #bbb; font-size: 14px; line-height: 1.6;">
+                Para manter o computador limpo e organizado, utilizamos **Pastas** (Diretórios), que servem para guardar e separar grupos de **Ficheiros** (Documentos, Fotos, Músicas).
+            </p>
+            <div style="background-color: #111; padding: 15px; margin-top: 15px; border-radius: 6px; border: 1px solid #333;">
+                <strong style="color: #ffcc00; font-size: 14px;">📝 Exercício Prático 5:</strong>
+                <p style="margin: 8px 0; font-size: 14px; color: #eee;">Qual é a principal função de uma Pasta (Diretório) num Sistema Operativo?</p>
+                <ul style="list-style-type: none; padding-left: 0; margin: 0; font-size: 14px; color: #ccc;">
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q5" id="inf_q5a"> <label for="inf_q5a">a) Aumentar a velocidade da internet.</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q5" id="inf_q5b"> <label for="inf_q5b">b) Organizar e agrupar ficheiros no armazenamento.</label></li>
+                    <li style="margin-bottom: 8px;"><input type="radio" name="inf_q5" id="inf_q5c"> <label for="inf_q5c">c) Desligar o computador de forma automática.</label></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+      
+    <div style="text-align: center; margin: 40px auto 0 auto; padding: 20px; background-color: #111; width: 100%; box-sizing: border-box; border-top: 1px solid #222;"><p style="color: #888; font-size: 14px; margin-bottom: 8px;">Total de visitas à nossa página:</p><img src="https://tinyurl.com/contador-formador" alt="Contador de Visitas"></div>
 
 </body>
 </html>
-
